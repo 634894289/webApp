@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			form.tab-form-demo .tab-pane {
+				margin: 20px 20px;
+			}
+		</style>
+		<div class="btn-group">
+			<label class="btn btn-primary uncheckable" ng-model="checkModel.Home" uib-btn-checkbox>Home</label>
+			<label class="btn btn-primary active" ng-model="checkModel.companyName" uib-btn-checkbox>海勒科技</label>
+			<label class="btn btn-primary" ng-model="checkModel.Handsontable" uib-btn-checkbox>Handsontable</label>
+			<label class="btn btn-primary" ng-model="checkModel.Codemirror" uib-btn-checkbox>Codemirror</label>
+			<label class="btn btn-primary" ng-model="checkModel.Modules" uib-btn-checkbox>Modules</label>
+			<label class="btn btn-primary" ng-model="checkModel.Pictures" uib-btn-checkbox>Pictures</label>
+			<label class="btn btn-primary" ng-model="checkModel.GoogleMap" uib-btn-checkbox>Google Map</label>
+		</div>
+		<br /><br /><br />
+		<div ng-controller="CollapseDemoCtrl">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+					<a class="navbar-brand" href="#">默认页</a>
+				</div>
+				<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">菜单1</a>
+						</li>
+						<li>
+							<a href="#">菜单2</a>
+						</li>
+						<li>
+							<a href="#">菜单3</a>
+						</li>
+						<li>
+							<a href="#">菜单4</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<br /><br /><br />
+		<div ng-controller="TabsDemoCtrl">
+			<form name="outerForm" class="tab-form-demo">
+				<uib-tabset active="activeForm">
+					<uib-tab index="0" heading="默认页" ui-sref='app'>
+						<div ui-view=""></div>
+					</uib-tab>
+					<uib-tab index="1" heading="菜单三" ui-sref='.tab3'>
+						<div ui-view=""></div>
+					</uib-tab>
+					<uib-tab index="2" heading="菜单四" ui-sref='.tab4'>
+						<div ui-view=""></div>
+					</uib-tab>
+				</uib-tabset>
+			</form>
+		</div>
+	</body>
+</html>
